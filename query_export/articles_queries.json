@@ -1,0 +1,198 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Rust-gress",
+    "dateExported": "2021-12-23T18:56:06.145Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "containerId": "",
+            "sortNum": 10000,
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.io)"
+                }
+            ],
+            "colId": "b1b654b6-2562-48e7-b0d1-4d001c869011",
+            "name": "Health",
+            "url": "http://{{url}}:8080",
+            "method": "GET",
+            "modified": "2021-12-22T16:57:59.118Z",
+            "created": "2021-12-22T16:50:05.596Z",
+            "_id": "8c27570b-80dd-4c37-9bbe-f0f90b3da481",
+            "params": [],
+            "tests": []
+        },
+        {
+            "containerId": "",
+            "sortNum": 12500,
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.io)"
+                }
+            ],
+            "colId": "b1b654b6-2562-48e7-b0d1-4d001c869011",
+            "name": "Get All articles",
+            "url": "http://{{url}}:8080/all",
+            "method": "GET",
+            "modified": "2021-12-23T18:46:36.063Z",
+            "created": "2021-12-23T18:46:24.146Z",
+            "_id": "dc0aeaaf-97ec-44b6-a77a-2baf9a4bce4d",
+            "params": [],
+            "tests": []
+        },
+        {
+            "containerId": "",
+            "sortNum": 15000,
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.io)"
+                }
+            ],
+            "colId": "b1b654b6-2562-48e7-b0d1-4d001c869011",
+            "name": "Get published articles",
+            "url": "http://{{url}}:8080/published",
+            "method": "GET",
+            "modified": "2021-12-23T18:42:58.434Z",
+            "created": "2021-12-23T18:42:06.356Z",
+            "_id": "53421dfa-56b6-49b0-9129-84f1a9e1bc05",
+            "params": [],
+            "tests": []
+        },
+        {
+            "containerId": "",
+            "sortNum": 17500,
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.io)"
+                }
+            ],
+            "colId": "b1b654b6-2562-48e7-b0d1-4d001c869011",
+            "name": "Publish Article",
+            "url": "http://{{url}}:8080/{uuid}/publish",
+            "method": "POST",
+            "modified": "2021-12-23T18:49:27.726Z",
+            "created": "2021-12-23T18:43:12.000Z",
+            "_id": "8f1c0c39-8f8f-4394-b34f-4dc95555ae6c",
+            "params": [
+                {
+                    "name": "uuid",
+                    "value": "38d2a0c1-42ab-4185-9681-cb6086e8380f",
+                    "isPath": true
+                }
+            ],
+            "tests": []
+        },
+        {
+            "containerId": "",
+            "sortNum": 20000,
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.io)"
+                }
+            ],
+            "colId": "b1b654b6-2562-48e7-b0d1-4d001c869011",
+            "name": "Create Article",
+            "url": "http://{{url}}:8080/new",
+            "method": "POST",
+            "modified": "2021-12-23T18:41:42.045Z",
+            "created": "2021-12-22T16:58:40.477Z",
+            "_id": "48d10d61-9239-4b93-b0b7-7e779027ff52",
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"title\": \"Postgress db\",\n    \"body\": \"Today we will create a postgres database that...\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "containerId": "",
+            "sortNum": 30000,
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.io)"
+                }
+            ],
+            "colId": "b1b654b6-2562-48e7-b0d1-4d001c869011",
+            "name": "Delete Article",
+            "url": "http://{{url}}:8080/{uuid}",
+            "method": "DELETE",
+            "modified": "2021-12-23T18:50:33.933Z",
+            "created": "2021-12-23T18:39:12.770Z",
+            "_id": "3860e54e-0cec-45de-8dbc-3ffa57180610",
+            "params": [
+                {
+                    "name": "uuid",
+                    "value": "18c6c9a7-7dbc-44c5-b743-277082b6f574",
+                    "isPath": true
+                }
+            ],
+            "tests": []
+        },
+        {
+            "containerId": "",
+            "sortNum": 40000,
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.io)"
+                }
+            ],
+            "colId": "b1b654b6-2562-48e7-b0d1-4d001c869011",
+            "name": "Update Article",
+            "url": "http://{{url}}:8080/{uuid}",
+            "method": "PUT",
+            "modified": "2021-12-23T18:52:54.999Z",
+            "created": "2021-12-23T18:51:10.469Z",
+            "_id": "5989bd65-3c39-4cf9-903a-35ab78783374",
+            "params": [
+                {
+                    "name": "uuid",
+                    "value": "38d2a0c1-42ab-4185-9681-cb6086e8380f",
+                    "isPath": true
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"title\": \"Un título salvaje\",\n    \"body\": \"Hemos cambiado el artículo!\"\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}
