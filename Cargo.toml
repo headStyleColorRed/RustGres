@@ -1,5 +1,5 @@
 [package]
-name = "rust-gress-2"
+name = "rust-gress"
 version = "0.1.0"
 edition = "2021"
 
