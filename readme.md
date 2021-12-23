@@ -101,16 +101,24 @@ psql -h postgres_db -d demo -U root ;
 Once you are inside, you can run the `\l` command and you'll be shown a list of databases
 ```
 demo=# \l
-                              List of databases
-    Name     | Owner | Encoding |  Collate   |   Ctype    | Access privileges 
--------------+-------+----------+------------+------------+-------------------
- demo | root  | UTF8     | en_US.utf8 | en_US.utf8 | 
- postgres    | root  | UTF8     | en_US.utf8 | en_US.utf8 | 
- template0   | root  | UTF8     | en_US.utf8 | en_US.utf8 | =c/root          +
-             |       |          |            |            | root=CTc/root
- template1   | root  | UTF8     | en_US.utf8 | en_US.utf8 | =c/root          +
-             |       |          |            |            | root=CTc/root
- test_db     | root  | UTF8     | en_US.utf8 | en_US.utf8 | 
-(5 rows)
+                             List of databases
+   Name    | Owner | Encoding |  Collate   |   Ctype    | Access privileges 
+-----------+-------+----------+------------+------------+-------------------
+ demo      | root  | UTF8     | en_US.utf8 | en_US.utf8 | 
+ postgres  | root  | UTF8     | en_US.utf8 | en_US.utf8 | 
+ template0 | root  | UTF8     | en_US.utf8 | en_US.utf8 | =c/root          +
+           |       |          |            |            | root=CTc/root
+ template1 | root  | UTF8     | en_US.utf8 | en_US.utf8 | =c/root          +
+           |       |          |            |            | root=CTc/root
+(4 rows)
 ```
-The table we created is the demo, so we'll connect to that db by running `\c demo`, which will allow us to list again the contents inside that db with another `\l`
+The table we created is the demo, so we'll connect to that db by running `\c demo`, which will allow us to list the relations inside that db with another `\d`.
+```
+demo=# \d
+                  List of relations
+ Schema |            Name            | Type  | Owner 
+--------+----------------------------+-------+-------
+ public | __diesel_schema_migrations | table | root
+ public | articles                   | table | root
+(2 rows)
+```
