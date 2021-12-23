@@ -8,41 +8,6 @@ use diesel::{
 };
 use uuid::Uuid;
 
-#[derive(Message)]
-#[rtype(result = "QueryResult<Article>")]
-pub struct Create {
-    pub title: String,
-    pub body: String,
-}
-
-#[derive(Message)]
-#[rtype(result = "QueryResult<Article>")]
-pub struct Update {
-    pub uuid: Uuid,
-    pub title: String,
-    pub body: String,
-}
-
-#[derive(Message)]
-#[rtype(result = "QueryResult<Article>")]
-pub struct Delete {
-    pub uuid: Uuid,
-}
-
-#[derive(Message)]
-#[rtype(result = "QueryResult<Article>")]
-pub struct Publish {
-    pub uuid: Uuid,
-}
-
-#[derive(Message)]
-#[rtype(result = "QueryResult<Vec<Article>>")]
-pub struct GetArticles;
-
-#[derive(Message)]
-#[rtype(result = "QueryResult<Vec<Article>>")]
-pub struct GetAllArticles;
-
 // Database Actor
 pub struct DBActor(pub Pool<ConnectionManager<PgConnection>>);
 
@@ -50,6 +15,13 @@ impl Actor for DBActor {
     type Context = SyncContext<Self>;
 }
 
+// Create an article
+#[derive(Message)]
+#[rtype(result = "QueryResult<Article>")]
+pub struct Create {
+    pub title: String,
+    pub body: String,
+}
 impl Handler<Create> for DBActor {
     type Result = QueryResult<Article>;
 
@@ -67,6 +39,14 @@ impl Handler<Create> for DBActor {
     }
 }
 
+// Update an article
+#[derive(Message)]
+#[rtype(result = "QueryResult<Article>")]
+pub struct Update {
+    pub uuid: Uuid,
+    pub title: String,
+    pub body: String,
+}
 impl Handler<Update> for DBActor {
     type Result = QueryResult<Article>;
 
@@ -80,6 +60,12 @@ impl Handler<Update> for DBActor {
     }
 }
 
+// Delete an article
+#[derive(Message)]
+#[rtype(result = "QueryResult<Article>")]
+pub struct Delete {
+    pub uuid: Uuid,
+}
 impl Handler<Delete> for DBActor {
     type Result = QueryResult<Article>;
 
@@ -92,6 +78,12 @@ impl Handler<Delete> for DBActor {
     }
 }
 
+// Publish an article
+#[derive(Message)]
+#[rtype(result = "QueryResult<Article>")]
+pub struct Publish {
+    pub uuid: Uuid,
+}
 impl Handler<Publish> for DBActor {
     type Result = QueryResult<Article>;
 
@@ -105,6 +97,10 @@ impl Handler<Publish> for DBActor {
     }
 }
 
+// Retrieve published articles
+#[derive(Message)]
+#[rtype(result = "QueryResult<Vec<Article>>")]
+pub struct GetArticles;
 impl Handler<GetArticles> for DBActor {
     type Result = QueryResult<Vec<Article>>;
 
@@ -115,7 +111,10 @@ impl Handler<GetArticles> for DBActor {
             .get_results::<Article>(&conn)
     }
 }
-
+// Retrieve published articles
+#[derive(Message)]
+#[rtype(result = "QueryResult<Vec<Article>>")]
+pub struct GetAllArticles;
 impl Handler<GetAllArticles> for DBActor {
     type Result = QueryResult<Vec<Article>>;
 

@@ -9,6 +9,7 @@ pub struct AppState {
     pub db: Addr<DBActor>,
 }
 
+/// Main article object
 #[derive(Debug, Clone, Queryable, Serialize, Deserialize)]
 pub struct Article {
     pub uuid: Uuid,
@@ -17,6 +18,7 @@ pub struct Article {
     pub published: bool,
 }
 
+/// Object to create a new article
 #[derive(Debug, Clone, Insertable, Serialize, Deserialize)]
 #[table_name = "articles"]
 pub struct NewArticle {
@@ -25,6 +27,7 @@ pub struct NewArticle {
     pub body: String,
 }
 
+/// Object to capture the query body
 #[derive(Serialize, Deserialize)]
 pub struct ArticleData {
     pub title: String,
