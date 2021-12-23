@@ -72,7 +72,7 @@ CREATE TABLE articles (
 # down.sql
 DROP TABLE articles
 ```
-<br>
+
 And once this is done we can run the migration!
 ```sh
 diesel migration run
