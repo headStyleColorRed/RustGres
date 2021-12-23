@@ -10,6 +10,6 @@ services:
     environment:
       POSTGRES_USER: root
       POSTGRES_PASSWORD: 1234
-      POSTGRES_DB: test_db
+      POSTGRES_DB: demo
     ports:
       - '5432:5432'
