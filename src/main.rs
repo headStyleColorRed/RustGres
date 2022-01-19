@@ -10,6 +10,7 @@ mod db_utils;
 mod models;
 mod queries;
 mod schema;
+mod schema_graphql;
 
 // Libary imports
 use actix::SyncArbiter;
@@ -20,15 +21,22 @@ use dotenv::dotenv;
 use models::AppState;
 use queries::*;
 use std::env;
+use schema_graphql::*;
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
+    // Start dotenv
     dotenv().ok();
+
+    // Get database pool
     let db_url =
         env::var("DATABASE_URL").expect("Error retrieving the database url. Check your .env file");
     run_migrations(&db_url);
     let pool = get_pool(&db_url);
     let db_addr = SyncArbiter::start(5, move || DBActor(pool.clone()));
+
+    // create Juniper schema
+    let schema = std::sync::Arc::new(create_schema());
 
     HttpServer::new(move || {
         App::new()
