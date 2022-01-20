@@ -6,8 +6,11 @@ use diesel::{
     PgConnection,
 };
 
+
+pub type DbPool = Pool<ConnectionManager<PgConnection>>;
+
 pub struct Context {
-    pub db_pool: Arc<Pool<ConnectionManager<PgConnection>>>,
+    pub db_pool: Arc<DbPool>,
 }
 pub struct QueryRoot;
 #[graphql_object(Context = Context)]
