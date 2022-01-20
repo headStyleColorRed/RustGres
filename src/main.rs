@@ -23,6 +23,7 @@ use handlers::graphql::{ graphql, playground };
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
+    println!("Starting server");
     // Start dotenv
     dotenv().ok();
 
